@@ -76,6 +76,16 @@ public class StudentView {
 	
 	
 	private void findById() {
+		System.out.println("\n 학생 아이디로 정보 조회하는 서비스입니다.");
+		System.out.println("학번을 입력해주세요.");
+		Student student = sc.findById();
+		
+		if(student != null) {
+			System.out.println("학번 : " + student.getStudentId());
+			System.out.println("이름 : " + student.getStudentId());
+			System.out.println(" : " + student.getStudentId());
+			System.out.println("학번 : " + student.getStudentId());
+		}
 		
 	}
 	

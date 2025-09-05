@@ -12,20 +12,63 @@ public class Student {
 	private int majorId;
 	private int dormId;
 	
+	private String majorName;
+	private String departmentName;
+	private int creditHours;
+	
+	private String dormName;
+	private String dormLocation;
+	private String dormLeader;
+	
 	public Student() {
 		super();
 	}
-	public Student(int studentId, String studentName, String birthDate, String gender, String enrollDate, int majorId,
-			int dormId) {
-		super();
-		this.studentId = studentId;
-		this.studentName = studentName;
-		this.birthDate = birthDate;
-		this.gender = gender;
-		this.enrollDate = enrollDate;
-		this.majorId = majorId;
-		this.dormId = dormId;
+	
+	
+
+	public String getMajorName() {
+		return majorName;
 	}
+	public void setMajorName(String majorName) {
+		this.majorName = majorName;
+	}
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
+
+	public int getCreditHours() {
+		return creditHours;
+	}
+	public void setCreditHours(int creditHours) {
+		this.creditHours = creditHours;
+	}
+
+
+
+	public String getDormName() {
+		return dormName;
+	}
+	public void setDormName(String dormName) {
+		this.dormName = dormName;
+	}
+	public String getDormLocation() {
+		return dormLocation;
+	}
+	public void setDormLocation(String dormLocation) {
+		this.dormLocation = dormLocation;
+	}
+	public String getDormLeader() {
+		return dormLeader;
+	}
+	public void setDormLeader(String dormLeader) {
+		this.dormLeader = dormLeader;
+	}
+
+
 	public int getStudentId() {
 		return studentId;
 	}
