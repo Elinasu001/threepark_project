@@ -129,7 +129,43 @@
 	</entry>
 	
 	<entry key="insert">
-	
+	INSERT 
+	  INTO 
+	       TB_STUDENTS
+	       (
+	       STUDENT_ID
+	     , STUDENT_NAME
+	     , BIRTH_DATE
+	     , GENDER
+	     , ENROLL_DATE
+	     , DELETE_YN
+	     , MAJOR_ID
+	     , DORM_ID
+	       ) 
+	VALUES 
+	       (
+	       ?
+	     , ?
+	     , ?
+	     , ?
+	     , ?
+	     , 'N'
+		 , (
+		   SELECT 
+				  MAJOR_ID
+			 FROM 
+				  TB_MAJOR 
+			WHERE 
+				  MAJOR_NAME = ?
+		    )
+	      , (
+			SELECT 
+			       DORM_ID
+			  FROM 
+			       TB_DORMITORY 
+			 WHERE 
+		           DORM_NAME = ?
+	      ))
 	</entry>
 	
 	<entry key="delete">
@@ -138,7 +174,7 @@
 		   SET 
 		       DELETE_YN = 'Y'
 		 WHERE 
-		       STUDENT_ID = ?
+		       STUDENT_ID = ? AND STUDENT_NAME = ?
 	</entry>
 
 </properties>
