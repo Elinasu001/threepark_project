@@ -11,6 +11,7 @@ public class Student {
 	private String enrollDate;
 	private int majorId;
 	private int dormId;
+	
 	public Student() {
 		super();
 	}
