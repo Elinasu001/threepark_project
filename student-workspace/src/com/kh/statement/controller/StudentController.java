@@ -8,8 +8,7 @@ import com.kh.statement.model.vo.Student;
 
 public class StudentController {
 
-public List<Student> findAll() {
-		
+	public List<Student> findAll() {
 	    List<Student> student = new StudentService().findAll();
 		return student;
 	}

@@ -8,13 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.kh.common.Template;
+import static com.kh.common.JDBCTemplate.*;
 import com.kh.statement.model.vo.Student;
 
 public class StudentDAO {
 
 	public List<Student> findAll(Connection conn) {
-	
 
 		List<Student> students = new ArrayList();
 		PreparedStatement pstmt = null;
@@ -30,7 +29,7 @@ public class StudentDAO {
 				Student student = new Student(rset.getInt("STUDENT_ID"), 
 												 rset.getString("STUDENT_NAME"),
 												 rset.getString("BIRTH_DATE"), 
-												 rset.getChar("GENDER"), // character형 처리 미숙 ㅠ 
+												 rset.getString("GENDER"), // character형 처리 미숙 ㅠ 
 												 rset.getString("ENROLL_DATE"),
 												 rset.getInt("MAJOR_ID"),
 												 rset.getInt("DORM_ID"));
@@ -40,12 +39,13 @@ public class StudentDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			Template.close(rset);
-			Template.close(pstmt);
+			close(rset);
+			close(pstmt);
 		}
 
 		return students;
 	}
+
 
 	
 	

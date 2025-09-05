@@ -7,14 +7,14 @@ public class Student {
 	private int studentId;
 	private String studentName;
 	private String birthDate;
-	private char gender;
+	private String gender;
 	private String enrollDate;
 	private int majorId;
 	private int dormId;
 	public Student() {
 		super();
 	}
-	public Student(int studentId, String studentName, String birthDate, char gender, String enrollDate, int majorId,
+	public Student(int studentId, String studentName, String birthDate, String gender, String enrollDate, int majorId,
 			int dormId) {
 		super();
 		this.studentId = studentId;
@@ -43,10 +43,10 @@ public class Student {
 	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 	public String getEnrollDate() {

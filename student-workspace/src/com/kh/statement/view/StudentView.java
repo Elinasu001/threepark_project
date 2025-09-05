@@ -30,13 +30,13 @@ public class StudentView {
 			
 			switch(menuNo) {
 			case 1 : findAll(); break;
-			case 2 : findByNum(); break;
-			case 3 : findByNAme(); break;
-			case 4 : findByMaj(); break;
-			case 5 : findByDorm(); break;
-			case 6 : insert(); break;
-			case 7 : update(); break;
-			case 8 : delete();  break;
+//			case 2 : findByNum(); break;
+//			case 3 : findByNAme(); break;
+//			case 4 : findByMaj(); break;
+//			case 5 : findByDorm(); break;
+//			case 6 : insert(); break;
+//			case 7 : update(); break;
+//			case 8 : delete();  break;
 			case 9 : System.out.println("프로그램을 종료합니다."); return;
 			default : System.out.println("유효하지 않은 입력입니다.");
 						
