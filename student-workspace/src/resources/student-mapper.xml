@@ -5,9 +5,140 @@
 	<comment>MEMBER SQL</comment>
 	
 	<entry key="findAll">
-		
+		SELECT 
+		       S.STUDENT_ID 
+		     , S.STUDENT_NAME
+		     , S.ENROLL_DATE
+		     , M.MAJOR_NAME
+		     , D.DORM_NAME
+		 FROM
+		       TB_STUDENTS S
+		 JOIN 
+		 	   TB_MAJOR M ON S.MAJOR_ID = M.MAJOR_ID
+		 JOIN 
+		 	   TB_DORMITORY D ON S.DORM_ID = D.DORM_ID
+		 WHERE
+		        S.DELETE_YN = 'N'
+	</entry>
 	
+	<entry key="findById">
+		SELECT
+		       S.STUDENT_ID
+		     , S.STUDENT_NAME
+		     , S.ENROLL_DATE
+		     , M.MAJOR_NAME
+		     , D.DORM_NAME
+		  FROM
+		       TB_STUDENTS S
+		 JOIN 
+		 	   TB_MAJOR M ON S.MAJOR_ID = M.MAJOR_ID
+		 JOIN 
+		       TB_DORMITORY D ON S.DORM_ID = D.DORM_ID
+		 WHERE
+		       S.DELETE_YN = 'N'
+		   AND
+		       S.STUDENT_ID = ?
+	</entry>
 	
+	<entry key="findByDomitory">
+		SELECT
+		      S.STUDENT_ID
+		    , S.STUDENT_NAME
+		    , S.ENROLL_DATE
+		    , M.MAJOR_NAME
+		    , D.DORM_NAME
+		 FROM
+		      TB_STUDENTS S
+		 JOIN 
+		      TB_MAJOR M ON S.MAJOR_ID = M.MAJOR_ID
+		 JOIN 
+		      TB_DORMITORY D ON S.DORM_ID = D.DORM_ID
+		WHERE
+		      S.DELETE_YN = 'N'
+		  AND
+		      D.DORM_NAME = ?
+	</entry>
+	
+	<entry key="findByMajor">
+		SELECT
+		       S.STUDENT_ID
+		     , S.STUDENT_NAME    
+		     , S.ENROLL_DATE
+		     , M.MAJOR_NAME
+		     , M.DEPARTMENT_NAME
+		     , M.CREDIT_HOURS
+		  FROM
+		       TB_STUDENTS S
+		  JOIN 
+		 	     TB_MAJOR M ON S.MAJOR_ID = M.MAJOR_ID
+		 WHERE
+		       S.DELETE_YN = 'N'
+		   AND
+		       M.MAJOR_NAME = ? 
+	</entry>
+	
+	<entry key="findByDormitory">
+		 SELECT
+		        S.STUDENT_ID
+		      , S.STUDENT_NAME
+		      , S.ENROLL_DATE
+		      , D.DORM_NAME
+		      , D.DORM_LOCATION
+		      , D.DORM_LEADER
+		   FROM
+		        TB_STUDENTS S
+		   JOIN 
+		        TB_DORMITORY D 
+		     ON 
+		        S.DORM_ID = D.DORM_ID
+		  WHERE
+		        S.DELETE_YN = 'N'
+		    AND
+		         D.DORM_NAME = ?
+	</entry>
+	
+	<entry key="updateStudent">
+		UPDATE 
+		       TB_STUDENTS
+		   SET 
+		       MAJOR_ID = (
+				    SELECT 
+				           MAJOR_ID
+				      FROM 
+				           TB_MAJOR
+			         WHERE 
+				           MAJOR_NAME = ?
+				)
+		 WHERE 
+		        STUDENT_ID = ?
+	</entry>
+	
+	<entry key="updateDormitory">
+		UPDATE 
+		       TB_STUDENTS
+		   SET 
+		       DORM_ID = (
+				    SELECT 
+				           DORM_ID
+				      FROM 
+				           TB_DORMITORY
+				     WHERE 
+				           DORM_NAME = ?
+				)
+		 WHERE STUDENT_ID = ?
+	</entry>
+	
+	<entry key="insert">
+	
+	</entry>
+	
+	<entry key="delete">
+		UPDATE 
+		       TB_STUDENT
+		   SET 
+		       DELETE_YN = 'Y'
+		 WHERE 
+		       STUDENT_ID = ?
 	</entry>
 
 </properties>
