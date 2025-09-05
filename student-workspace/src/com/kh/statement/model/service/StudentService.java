@@ -18,8 +18,6 @@ public class StudentService {
 	
 	public List<Student> findAll() {
 		
-		Connection conn = getConnection();
-		
 		List<Student> students = new StudentDAO().findAll(conn);
 
 		close(conn);

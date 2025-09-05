@@ -40,23 +40,21 @@
 		       S.STUDENT_ID = ?
 	</entry>
 	
-	<entry key="findByDomitory">
-		SELECT
-		      S.STUDENT_ID
-		    , S.STUDENT_NAME
-		    , S.ENROLL_DATE
-		    , M.MAJOR_NAME
-		    , D.DORM_NAME
-		 FROM
-		      TB_STUDENTS S
-		 JOIN 
-		      TB_MAJOR M ON S.MAJOR_ID = M.MAJOR_ID
-		 JOIN 
-		      TB_DORMITORY D ON S.DORM_ID = D.DORM_ID
-		WHERE
-		      S.DELETE_YN = 'N'
-		  AND
-		      D.DORM_NAME = ?
+	<entry key="findByName">
+		SELECT       
+      		S.STUDENT_ID 
+		     , S.STUDENT_NAME     
+		     , S.ENROLL_DATE
+		     , M.MAJOR_NAME
+		     , D.DORM_NAME
+		  FROM
+		       TB_STUDENTS S
+		  JOIN 
+		 	   TB_MAJOR M ON S.MAJOR_ID = M.MAJOR_ID
+		  JOIN 
+		       TB_DORMITORY D ON S.DORM_ID = D.DORM_ID
+		 WHERE
+		        S.DELETE_YN = 'N' AND S.STUDENT_NAME = ?
 	</entry>
 	
 	<entry key="findByMajor">

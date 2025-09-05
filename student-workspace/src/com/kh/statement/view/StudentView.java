@@ -16,12 +16,21 @@ public class StudentView {
 		while(true) {
 			System.out.println(" ------- 학생 관리 프로그램 ------- "); 
 			System.out.println("1. 학생 전체 조회");
+<<<<<<< HEAD
 			System.out.println("2. 학생 아이디로 정보 조회");
 			System.out.println("3. 기숙사 이름으로 학생 정보 조회 ");
 			System.out.println("4. 전공 이름으로 학생 정보 조회");
 			System.out.println("5. 기숙사 이름으로 학생 정보 조회");
 			System.out.println("6. 학생 아이디로 변경할 전공 정보 수정");
 			System.out.println("7. 학생 아이디로 변경할 기숙사 정보 수정");
+=======
+			System.out.println("2. 학생 조회 (ID)");
+			System.out.println("3. 학생 조회 (이름)");
+			System.out.println("4. 학생 전공 정보 조회");
+			System.out.println("5. 학생 기숙사 정보 조회");
+			System.out.println("6. 학생 아이디로 전공 정보 수정");
+			System.out.println("7. 학생 아이디로 기숙사 정보 수정");
+>>>>>>> aad6568f10b87eec131c216d37e78a019ca0529d
 			System.out.println("8. 학생 추가");
 			System.out.println("9. 학생 삭제(자퇴/재적 여부)");
 			System.out.println("0. 프로그램 종료");
@@ -52,7 +61,7 @@ public class StudentView {
 		
 		List<Student> students = stc.findAll();
 		
-		System.out.println("\n조회된 총 사원수는 " + students.size() + "명 입니다.");
+		System.out.println("\n조회된 학생수는 " + students.size() + "명 입니다.");
 		
 		if(students.isEmpty()) {
 			System.out.println("조회결과가 존재하지 않습니다.");
@@ -60,13 +69,13 @@ public class StudentView {
 			
 			for(Student student : students) {
 				System.out.println("========================");
-				System.out.println("학번 : " +student.getStudentId() + ", ");
-				System.out.print("성명 : " + student.getStudentName() + ", ");
-				System.out.print("생년월일 : " + student.getBirthDate() + ", ");
-				System.out.print("성별 : " + student.getGender() + ", ");
-				System.out.print("입학일 : " + student.getEnrollDate() + ", ");
-				System.out.print("전공ID : " + student.getMajorId() + ", ");
-				System.out.print("기숙사ID : " + student.getDormId() + ", ");
+				System.out.print("\n학번 		: " +student.getStudentId() + ", ");
+				System.out.print("\n성명 		: " + student.getStudentName() + ", ");
+				System.out.print("\n생년월일 	: " + student.getBirthDate() + ", ");
+				System.out.print("\n성별 		: " + student.getGender() + ", ");
+				System.out.print("\n입학일 	: " + student.getEnrollDate() + ", ");
+				System.out.print("\n전공명 	: " + student.getMajorId() + ", ");
+				System.out.print("\n기숙사명 	: " + student.getDormId() + ", ");
 				System.out.println();
 				
 			}
@@ -76,6 +85,7 @@ public class StudentView {
 	
 	
 	private void findById() {
+<<<<<<< HEAD
 		System.out.println("\n 학생 아이디로 정보 조회하는 서비스입니다.");
 		System.out.println("학번을 입력해주세요.");
 		int studentId = sc.nextInt();
@@ -91,6 +101,8 @@ public class StudentView {
 		}else {
 			System.out.println("조회에 실패하셨습니다.");
 		}
+=======
+>>>>>>> aad6568f10b87eec131c216d37e78a019ca0529d
 		
 	}
 	
