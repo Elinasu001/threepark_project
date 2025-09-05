@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -47,7 +48,24 @@ public class StudentDAO {
 	}
 	
 	
-public Student findById() {
+	public Student findById(Connection conn, int studentId) {
+		Student student = null;
+	  	PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		try {
+			pstmt = conn.prepareStatement("findById");
+			rset = pstmt.executeQuery();
+			pstmt.setInt(1, studentId);
+			
+			while(rset.next()) {
+//				Student student = new Student(rset);
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		return null;
 	}

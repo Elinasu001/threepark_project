@@ -29,9 +29,11 @@ public class StudentService {
 	}
 	
 	
-	public Student findById() {
+	public Student findById(int studentId) {
 		
-		return null;
+		Student student = new StudentDAO().findById(conn, studentId);
+		
+		return student;
 	}
 	
 	

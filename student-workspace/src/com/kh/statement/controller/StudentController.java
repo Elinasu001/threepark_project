@@ -15,8 +15,8 @@ public class StudentController {
 	
 	
 	
-	public Student findById() {
-		
+	public Student findById(int studentId) {
+		Student student = new StudentService().findById(studentId);
 		return null;
 	}
 	
