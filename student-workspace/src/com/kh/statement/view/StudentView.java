@@ -31,14 +31,14 @@ public class StudentView {
 			
 			switch(menuNo) {
 			case 1 : findAll(); break;
-//			case 2 : findById(); break;
-//			case 3 : findByName(); break;
-//			case 4 : findMajor(); break;
-//			case 5 : findDormitory(); break;
-//			case 6 : updateStudent(); break;
-//			case 7 : updateDormitory(); break;
-//			case 8 : insert();  break;
-//			case 9 : delete();  break;
+			case 2 : findById(); break;
+			case 3 : findByDomitory(); break;
+			case 4 : findByMajor(); break;
+			case 5 : findByDormitory(); break;
+			case 6 : updateStudent(); break;
+			case 7 : updateDormitory(); break;
+			case 8 : insert();  break;
+			case 9 : delete();  break;
 			case 10 : System.out.println("프로그램을 종료합니다."); return;
 			default : System.out.println("유효하지 않은 입력입니다.");
 						
@@ -75,8 +75,53 @@ public class StudentView {
 	
 	
 	
+	private void findById() {
+		
+	}
 	
 	
 	
+	
+	
+	private void findByDomitory() {
+		
+	}
+	
+	
+	
+	
+	private void findByMajor() {
+		
+	}
+	
+	
+	
+	private void findByDormitory() {
+		
+	}
+	
+	
+	
+	private void updateStudent() {
+		
+	}
+	
+	
+	
+	private void updateDormitory() {
+		
+	}
+	
+	
+	
+	private void insert() {
+		
+	}
+	
+	
+	
+	private void delete() {
+		
+	}
 	
 }
