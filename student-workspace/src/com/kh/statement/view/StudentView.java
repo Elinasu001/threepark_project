@@ -16,8 +16,8 @@ public class StudentView {
 		while(true) {
 			System.out.println(" ------- 학생 관리 프로그램 ------- "); 
 			System.out.println("1. 학생 전체 조회");
-			System.out.println("2. 학생 아이디로 정보 조회");
-			System.out.println("3. 학생 이름으로 정보 조회 ");
+			System.out.println("2. 학생 조회 (ID)");
+			System.out.println("3. 학생 조회 (이름)");
 			System.out.println("4. 학생 전공 정보 조회");
 			System.out.println("5. 학생 기숙사 정보 조회");
 			System.out.println("6. 학생 아이디로 전공 정보 수정");
@@ -52,7 +52,7 @@ public class StudentView {
 		
 		List<Student> students = stc.findAll();
 		
-		System.out.println("\n조회된 총 사원수는 " + students.size() + "명 입니다.");
+		System.out.println("\n조회된 학생수는 " + students.size() + "명 입니다.");
 		
 		if(students.isEmpty()) {
 			System.out.println("조회결과가 존재하지 않습니다.");
@@ -60,13 +60,13 @@ public class StudentView {
 			
 			for(Student student : students) {
 				System.out.println("========================");
-				System.out.println("학번 : " +student.getStudentId() + ", ");
-				System.out.print("성명 : " + student.getStudentName() + ", ");
-				System.out.print("생년월일 : " + student.getBirthDate() + ", ");
-				System.out.print("성별 : " + student.getGender() + ", ");
-				System.out.print("입학일 : " + student.getEnrollDate() + ", ");
-				System.out.print("전공ID : " + student.getMajorId() + ", ");
-				System.out.print("기숙사ID : " + student.getDormId() + ", ");
+				System.out.print("\n학번 		: " +student.getStudentId() + ", ");
+				System.out.print("\n성명 		: " + student.getStudentName() + ", ");
+				System.out.print("\n생년월일 	: " + student.getBirthDate() + ", ");
+				System.out.print("\n성별 		: " + student.getGender() + ", ");
+				System.out.print("\n입학일 	: " + student.getEnrollDate() + ", ");
+				System.out.print("\n전공명 	: " + student.getMajorId() + ", ");
+				System.out.print("\n기숙사명 	: " + student.getDormId() + ", ");
 				System.out.println();
 				
 			}
@@ -76,16 +76,6 @@ public class StudentView {
 	
 	
 	private void findById() {
-		System.out.println("\n 학생 아이디로 정보 조회하는 서비스입니다.");
-		System.out.println("학번을 입력해주세요.");
-		Student student = sc.findById();
-		
-		if(student != null) {
-			System.out.println("학번 : " + student.getStudentId());
-			System.out.println("이름 : " + student.getStudentId());
-			System.out.println(" : " + student.getStudentId());
-			System.out.println("학번 : " + student.getStudentId());
-		}
 		
 	}
 	

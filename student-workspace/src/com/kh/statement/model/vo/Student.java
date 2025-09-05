@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Student {
 
+	// STUDENTS 테이블 정보 : 
 	private int studentId;
 	private String studentName;
 	private String birthDate;
@@ -12,10 +13,12 @@ public class Student {
 	private int majorId;
 	private int dormId;
 	
+	// MAJOR 테이블 정보 :
 	private String majorName;
 	private String departmentName;
 	private int creditHours;
 	
+	// DORMITORY 테이블 정보 : 
 	private String dormName;
 	private String dormLocation;
 	private String dormLeader;
@@ -24,8 +27,27 @@ public class Student {
 		super();
 	}
 	
-	
+	/*public Student(int studentId, String studentName, String birthDate, String gender, String enrollDate, int majorId,
+			int dormId, String majorName, String departmentName, int creditHours, String dormName, String dormLocation,
+			String dormLeader) {
+		super();
+		this.studentId = studentId;
+		this.studentName = studentName;
+		this.birthDate = birthDate;
+		this.gender = gender;
+		this.enrollDate = enrollDate;
+		this.majorId = majorId;
+		this.dormId = dormId;
+		this.majorName = majorName;
+		this.departmentName = departmentName;
+		this.creditHours = creditHours;
+		this.dormName = dormName;
+		this.dormLocation = dormLocation;
+		this.dormLeader = dormLeader;
+	}
+	*/
 
+	// MAJOR
 	public String getMajorName() {
 		return majorName;
 	}
@@ -35,20 +57,17 @@ public class Student {
 	public String getDepartmentName() {
 		return departmentName;
 	}
-
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
 	}
-
 	public int getCreditHours() {
 		return creditHours;
 	}
 	public void setCreditHours(int creditHours) {
 		this.creditHours = creditHours;
 	}
-
-
-
+	
+	// DORMITORY
 	public String getDormName() {
 		return dormName;
 	}
@@ -68,7 +87,7 @@ public class Student {
 		this.dormLeader = dormLeader;
 	}
 
-
+	// STUDENTS
 	public int getStudentId() {
 		return studentId;
 	}
