@@ -16,13 +16,14 @@ public class StudentView {
 		while(true) {
 			System.out.println(" ------- 학생 관리 프로그램 ------- "); 
 			System.out.println("1. 학생 전체 조회");
-			System.out.println("2. 학번별 학생 조회");
-			System.out.println("3. 학생 성명 조회");
-			System.out.println("4. 전공별 학생 조회");
-			System.out.println("5. 기숙사별 학생 조회");
-			System.out.println("6. 학생 추가");
-			System.out.println("7. 학생 변경");
-			System.out.println("8. 학생 삭제");
+			System.out.println("2. 학생 아이디로 정보 조회");
+			System.out.println("3. 학생 이름으로 정보 조회 ");
+			System.out.println("4. 학생 전공 정보 조회");
+			System.out.println("5. 학생 기숙사 정보 조회");
+			System.out.println("6. 학생 아이디로 전공 정보 수정");
+			System.out.println("7. 학생 아이디로 기숙사 정보 수정");
+			System.out.println("8. 학생 추가");
+			System.out.println("9. 학생 삭제(자퇴/재적 여부)");
 			System.out.println("0. 프로그램 종료");
 			System.out.println("메뉴를 선택해주세요 > ");
 			int menuNo = sc.nextInt();
@@ -30,14 +31,15 @@ public class StudentView {
 			
 			switch(menuNo) {
 			case 1 : findAll(); break;
-//			case 2 : findByNum(); break;
-//			case 3 : findByNAme(); break;
-//			case 4 : findByMaj(); break;
-//			case 5 : findByDorm(); break;
-//			case 6 : insert(); break;
-//			case 7 : update(); break;
-//			case 8 : delete();  break;
-			case 9 : System.out.println("프로그램을 종료합니다."); return;
+//			case 2 : findById(); break;
+//			case 3 : findByName(); break;
+//			case 4 : findMajor(); break;
+//			case 5 : findDormitory(); break;
+//			case 6 : updateStudent(); break;
+//			case 7 : updateDormitory(); break;
+//			case 8 : insert();  break;
+//			case 9 : delete();  break;
+			case 10 : System.out.println("프로그램을 종료합니다."); return;
 			default : System.out.println("유효하지 않은 입력입니다.");
 						
 			}
