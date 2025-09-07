@@ -16,10 +16,10 @@ public class StudentView {
 		while(true) {
 			System.out.println(" ------- 학생 관리 프로그램 ------- "); 
 			System.out.println("1. 학생 전체 조회");
-			System.out.println("2. 학생 조회 (ID)");
-			System.out.println("3. 학생 조회 (이름)");
-			System.out.println("4. 학생 전공 정보 조회");
-			System.out.println("5. 학생 기숙사 정보 조회");
+			System.out.println("2. 학생 정보 조회 (ID)");
+			System.out.println("3. 학생 정보 조회 (학생 이름)");
+			System.out.println("4. 학생 정보 조회 (전공 이름)");
+			System.out.println("5. 학생 정보 조회 (기숙사 이름)");
 			System.out.println("6. 학생 아이디로 전공 정보 수정");
 			System.out.println("7. 학생 아이디로 기숙사 정보 수정");
 			System.out.println("8. 학생 추가");
