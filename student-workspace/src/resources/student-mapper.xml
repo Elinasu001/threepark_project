@@ -133,7 +133,7 @@
 		 WHERE STUDENT_ID = ?
 	</entry>
 	
-	<entry key="insert">
+	<entry key="save">
 	INSERT 
 	  INTO 
 	       TB_STUDENTS
@@ -149,28 +149,15 @@
 	       ) 
 	VALUES 
 	       (
-	       ?
+	       SEQ_STUDENTNO.NEXTVAL
 	     , ?
+	     , TO_DATE(?, 'YYYY-MM-DD')
 	     , ?
-	     , ?
-	     , ?
+	     , TO_DATE(?, 'YYYY-MM-DD')
 	     , 'N'
-		 , (
-		   SELECT 
-				  MAJOR_ID
-			 FROM 
-				  TB_MAJOR 
-			WHERE 
-				  MAJOR_NAME = ?
-		    )
-	      , (
-			SELECT 
-			       DORM_ID
-			  FROM 
-			       TB_DORMITORY 
-			 WHERE 
-		           DORM_NAME = ?
-	      ))
+		 , (SELECT MAJOR_ID  FROM TB_MAJOR     WHERE MAJOR_ID  = ?)
+	     , (SELECT DORM_ID   FROM TB_DORMITORY WHERE DORM_ID   = ?)
+	      )
 	</entry>
 	
 	<entry key="delete">

@@ -37,7 +37,7 @@ public class StudentView {
 			case 5 : findByDormitory(); break;
 			case 6 : updateStudent(); break;
 			case 7 : updateDormitory(); break;
-			case 8 : insert();  break;
+			case 8 : save();  break;
 			case 9 : delete();  break;
 			case 10 : System.out.println("프로그램을 종료합니다."); return;
 			default : System.out.println("유효하지 않은 입력입니다.");
@@ -60,7 +60,7 @@ public class StudentView {
 			
 			for(Student student : students) {
 				System.out.println("========================");
-				System.out.print("학번 : " +student.getStudentId() + ", ");
+				System.out.print("학번 : " + student.getStudentId() + ", ");
 				System.out.print("성명 : " + student.getStudentName() + ", ");
 				System.out.print("생년월일 : " + student.getBirthDate() + ", ");
 				System.out.print("성별 : " + student.getGender() + ", ");
@@ -131,8 +131,30 @@ public class StudentView {
 	
 	
 	
-	private void insert() {
+	private void save() {
+		System.out.println("---------- 학생 추가 서비스입니다. ----------");
+		System.out.println("이름을 입력해주세요 > ");
+		String studentName = sc.nextLine();
+		System.out.println("생년월일을 입력해주세요 > ex YYYY-MM-DD ");
+		String birthDate = sc.nextLine();
+		System.out.println("성별을 입력해주세요 > (ex 'M' or 'F' ");
+		String gender = sc.nextLine();
+		System.out.println("입학날짜를 입력해주세요 > (ex YYYY-MM-DD ");
+		String enrollDate = sc.nextLine();
+		System.out.println("전공 아이디를 입력해주세요 > ");
+		int majorId = sc.nextInt();
+		sc.nextLine();
+		System.out.println("기숙사 아이디를 입력해주세요 > ");
+		int dormId = sc.nextInt();
+		sc.nextLine();
 		
+		int result = stc.save(studentName, birthDate, gender, enrollDate, majorId, dormId);
+		
+		if(result > 0) {
+			System.out.println("학생 추가에 성공하셨습니다.");
+		} else {
+			System.out.println("학생 추가에 실패하셨습니다.");
+		}
 	}
 	
 	

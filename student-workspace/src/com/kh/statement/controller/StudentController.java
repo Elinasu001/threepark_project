@@ -50,8 +50,13 @@ public class StudentController {
 	
 	
 	
-	public int insert() {
-		return 0;
+	public int save(String studentName, String birthDate, String gender, String enrollDate, int majorId, int dormId) {
+		
+		Student student = new Student(studentName, birthDate, gender, enrollDate, majorId, dormId);
+		
+		int result = new StudentService().save(student);
+		
+		return result;
 	}
 	
 	

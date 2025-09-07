@@ -29,6 +29,26 @@ public class Student {
 	
 
 	/**
+	 * save 전용 생성자
+	 * 목록 화면에 필요한 최소 필드만 매핑한다.
+	 * @param studentName
+	 * @param birthDate
+	 * @param gender
+	 * @param enrollDate
+	 * @param majorId
+	 * @param dormId
+	 */
+	public Student(String studentName, String birthDate, String gender, String enrollDate, int majorId, int dormId) {
+		super();
+		this.studentName = studentName;
+		this.birthDate = birthDate;
+		this.gender = gender;
+		this.enrollDate = enrollDate;
+		this.majorId = majorId;
+		this.dormId = dormId;
+	}
+
+	/**
 	 * findAll 전용 생성자
 	 * TB_STUDENTS, TB_MAJOR, TB_DORMITORY 조인 결과 중 
 	 * 목록 화면에 필요한 최소 필드만 매핑한다.

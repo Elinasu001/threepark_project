@@ -90,8 +90,17 @@ public class StudentService {
 	
 	
 	
-	public int insert() {
-		return 0;
+	public int save(Student student) {
+		
+		int result = new StudentDAO().save(conn, student);
+		
+		if(result > 0) {
+			commit(conn);
+		} 
+		
+		close(conn);
+		
+		return result;
 	}
 	
 	

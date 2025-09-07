@@ -123,8 +123,29 @@ public class StudentDAO {
 	
 	
 	
-	public int insert() {
-		return 0;
+	public int save(Connection conn, Student student) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = prop.getProperty("save");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, student.getStudentName());
+			pstmt.setString(2, student.getBirthDate());
+			pstmt.setString(3, student.getGender());
+			pstmt.setString(4, student.getEnrollDate());
+			pstmt.setInt(5, student.getMajorId());
+			pstmt.setInt(6, student.getDormId());
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 	
 	
