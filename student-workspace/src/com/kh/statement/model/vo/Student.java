@@ -28,7 +28,19 @@ public class Student {
 	}
 	
 
+	/**
+	 * findAll 전용 생성자
+	 * TB_STUDENTS, TB_MAJOR, TB_DORMITORY 조인 결과 중 
+	 * 목록 화면에 필요한 최소 필드만 매핑한다.
+	 * @param studentId
+	 * @param studentName
+	 * @param enrollDate
+	 * @param majorName
+	 * @param dormName
+	 * ※ 나머지 필드는 기본값(0/null)로 남는다.
+	 */
 	public Student(int studentId, String studentName, String enrollDate, String majorName, String dormName) {
+		
 		this.studentId = studentId;
 		this.studentName = studentName;
 		this.enrollDate = enrollDate;
