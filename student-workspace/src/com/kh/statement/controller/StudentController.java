@@ -9,15 +9,15 @@ import com.kh.statement.model.vo.Student;
 public class StudentController {
 
 	public List<Student> findAll() {
-	    List<Student> student = new StudentService().findAll();
-		return student;
+	    List<Student> students = new StudentService().findAll();
+		return students;
 	}
 	
 	
 	
 	public Student findById(int studentId) {
 		Student student = new StudentService().findById(studentId);
-		return null;
+		return student;
 	}
 	
 	

@@ -2,7 +2,11 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 
-	<comment>MEMBER SQL</comment>
+	<comment>STUDENT SQL</comment>
+	
+	<entry key="A">
+		B
+	</entry>
 	
 	<entry key="findAll">
 		SELECT 
@@ -18,7 +22,10 @@
 		 JOIN 
 		 	   TB_DORMITORY D ON S.DORM_ID = D.DORM_ID
 		 WHERE
-		        S.DELETE_YN = 'N'
+		       S.DELETE_YN = 'N'
+		 ORDER
+		    BY
+		       S.STUDENT_ID
 	</entry>
 	
 	<entry key="findById">

@@ -31,6 +31,8 @@ public class StudentService {
 		
 		Student student = new StudentDAO().findById(conn, studentId);
 		
+		close(conn);
+		
 		return student;
 	}
 	

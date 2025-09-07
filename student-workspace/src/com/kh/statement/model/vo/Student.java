@@ -27,25 +27,15 @@ public class Student {
 		super();
 	}
 	
-	/*public Student(int studentId, String studentName, String birthDate, String gender, String enrollDate, int majorId,
-			int dormId, String majorName, String departmentName, int creditHours, String dormName, String dormLocation,
-			String dormLeader) {
-		super();
+
+	public Student(int studentId, String studentName, String enrollDate, String majorName, String dormName) {
 		this.studentId = studentId;
 		this.studentName = studentName;
-		this.birthDate = birthDate;
-		this.gender = gender;
 		this.enrollDate = enrollDate;
-		this.majorId = majorId;
-		this.dormId = dormId;
 		this.majorName = majorName;
-		this.departmentName = departmentName;
-		this.creditHours = creditHours;
 		this.dormName = dormName;
-		this.dormLocation = dormLocation;
-		this.dormLeader = dormLeader;
 	}
-	*/
+
 
 	// MAJOR
 	public String getMajorName() {
